@@ -153,10 +153,100 @@ canvas{
 .visible {
     opacity: 1;
 }
+.hidden { display: none; }
+.visible { display: block; }
 @keyframes moveHand {
     0% { top: 0; }
     50% { top: 30px; }
     100% { top: 0; }
+}
+.txt-top{
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    width: 320px;
+}
+.txt-bottom{
+    color: white;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    width: 320px;
+}
+.txt-left{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+.txt-right{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 87%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+.txt-left2,.txt-left3,.txt-left4,.txt-left5,.txt-left6,.txt-left7,.txt-right1,.txt-right2,.txt-right3,.txt-right4,.txt-right5,.txt-right6,.txt-right7,.txt-bottom1{
+    opacity: 0;
+}
+.fade-in-left {
+    animation: fadeInLeft 3s forwards;
+}
+.fade-in-right {
+    animation: fadeInRight 3s forwards;
+}
+.fade-in-bottom {
+    animation: fadeInBottom 5s forwards;
+}
+p{
+    margin-bottom: 10px;
+}
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.txt-bottom{
+    width: 568px;
+    text-align: center;
+}
+.txt-bottom1{
+    font-size: 30px;
+    font-weight: bold;
+    color: pink;
 }
 </style>
 
@@ -165,8 +255,6 @@ canvas{
 window.console = window.console || function(t) {};
 
 </script>
-
-
 
 <script>
 
@@ -188,10 +276,34 @@ window.parent.postMessage("resize", "*");
 <!-- <path d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z" /> -->
 
 </svg></button>
-<div class="click">
+<div class="click ">
     <span class="title">Click vào ảnh bên dưới cô nương. Tại hạ có món quà dành tặng cô nương!</span>
 
     <img class="hand" src="hand.png" alt="Click vào ảnh bên dưới cô nương ơi" width="100" height="100">
+</div>
+<div class="txt-top hidden">
+    <div class="txt-top1">THÂN TẶNG EM: <b style="color: red; font-size: 20px;">NGUYỄN THỊ PHƯỢNG</b></div>
+</div>
+<div class="txt-left hidden">
+    <p class="txt-left1">Gửi em người con gái anh thích</p>
+    <p class="txt-left2">Gửi em người con gái anh thích</p>
+    <p class="txt-left3">Gửi em người con gái anh thích</p>
+    <p class="txt-left4">Gửi em người con gái anh thích</p>
+    <p class="txt-left5">Gửi em người con gái anh thích</p>
+    <p class="txt-left6">Gửi em người con gái anh thích</p>
+    <p class="txt-left7">Gửi em người con gái anh thích</p>
+</div>
+<div class="txt-right">
+    <p class="txt-right1">Gửi em người con gái anh thích</p>
+    <p class="txt-right2">Gửi em người con gái anh thích</p>
+    <p class="txt-right3">Gửi em người con gái anh thích</p>
+    <p class="txt-right4">Gửi em người con gái anh thích</p>
+    <p class="txt-right5">Gửi em người con gái anh thích</p>
+    <p class="txt-right6">Gửi em người con gái anh thích</p>
+    <p class="txt-right7">Gửi em người con gái anh thích</p>
+</div>
+<div class="txt-bottom">
+    <p class="txt-bottom1">CHÚC EM CÓ MỘT NGÀY MÙNG 8/3 THẬT ẤM ÁP, BÌNH YÊN VÀ HẠNH PHÚC</p>
 </div>
 <img class="box visible" src="box.jpg" alt="Girl in a jacket" width="300" height="300">
 <audio id="background-music" src=".\music\love.mp3" preload="auto" loop></audio>
@@ -206,6 +318,73 @@ window.parent.postMessage("resize", "*");
         const audio = document.getElementById('background-music');
         audio.volume = 0.5; // Giá trị volume từ 0.0 đến 1.0 (0.0 là tắt tiếng, 1.0 là âm lượng tối đa)
         audio.play();
+        
+        const txtTop1 = document.querySelector('.txt-top1');
+        const txtLeft1 = document.querySelector('.txt-left1');
+        const txtLeft2 = document.querySelector('.txt-left2');
+        const txtLeft3 = document.querySelector('.txt-left3');
+        const txtLeft4 = document.querySelector('.txt-left4');
+        const txtLeft5 = document.querySelector('.txt-left5');
+        const txtLeft6 = document.querySelector('.txt-left6');
+        const txtLeft7 = document.querySelector('.txt-left7');
+        const txtRight1 = document.querySelector('.txt-right1');
+        const txtRight2 = document.querySelector('.txt-right2');
+        const txtRight3 = document.querySelector('.txt-right3');
+        const txtRight4 = document.querySelector('.txt-right4');
+        const txtRight5 = document.querySelector('.txt-right5');
+        const txtRight6 = document.querySelector('.txt-right6');
+        const txtRight7 = document.querySelector('.txt-right7');
+        const txtBottom1 = document.querySelector('.txt-bottom1');
+        document.querySelector('.txt-top').classList.remove('hidden');
+        txtTop1.classList.add('fade-in-left');
+        
+        txtTop1.addEventListener('animationend', () => {
+            document.querySelector('.txt-left').classList.remove('hidden');
+            txtLeft1.classList.add('fade-in-left');
+        });
+
+        txtLeft1.addEventListener('animationend', () => {
+            txtLeft2.classList.add('fade-in-left');
+        });
+        txtLeft2.addEventListener('animationend', () => {
+            txtLeft3.classList.add('fade-in-left');
+        });
+        txtLeft3.addEventListener('animationend', () => {
+            txtLeft4.classList.add('fade-in-left');
+        });
+        txtLeft4.addEventListener('animationend', () => {
+            txtLeft5.classList.add('fade-in-left');
+        });
+        txtLeft5.addEventListener('animationend', () => {
+            txtLeft6.classList.add('fade-in-left');
+        });
+        txtLeft6.addEventListener('animationend', () => {
+            txtLeft7.classList.add('fade-in-left');
+        });
+        txtLeft7.addEventListener('animationend', () => {
+            txtRight1.classList.add('fade-in-right');
+        });
+        txtRight1.addEventListener('animationend', () => {
+            txtRight2.classList.add('fade-in-right');
+        });
+        txtRight2.addEventListener('animationend', () => {
+            txtRight3.classList.add('fade-in-right');
+        });
+        txtRight3.addEventListener('animationend', () => {
+            txtRight4.classList.add('fade-in-right');
+        });
+        txtRight4.addEventListener('animationend', () => {
+            txtRight5.classList.add('fade-in-right');
+        });
+        txtRight5.addEventListener('animationend', () => {
+            txtRight6.classList.add('fade-in-right');
+        });
+        txtRight6.addEventListener('animationend', () => {
+            txtRight7.classList.add('fade-in-right');
+        });
+        txtRight7.addEventListener('animationend', () => {
+            txtBottom1.classList.add('fade-in-bottom');
+        });
     });
 </script>
 <script type="x-shader/x-vertex" id="vertexShader">
