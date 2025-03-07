@@ -182,17 +182,17 @@ canvas{
     color: white;
     position: absolute;
     top: 50%;
-    left: 13%;
+    left: 15%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 350px;
 }
 .txt-right{
     color: white;
     position: absolute;
     top: 50%;
-    left: 87%;
+    left: 85%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 350px;
 }
 .txt-left2,.txt-left3,.txt-left4,.txt-left5,.txt-left6,.txt-left7,.txt-right1,.txt-right2,.txt-right3,.txt-right4,.txt-right5,.txt-right6,.txt-right7,.txt-bottom1{
     opacity: 0;
@@ -207,7 +207,7 @@ canvas{
     animation: fadeInBottom 5s forwards;
 }
 p{
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 @keyframes fadeInLeft {
     from {
@@ -248,6 +248,28 @@ p{
     font-weight: bold;
     color: pink;
 }
+@media screen and (max-width: 400px){
+    .click{
+        top: 20%;
+    }
+    p{
+        margin-bottom: 10px;
+    }
+    .txt-left{
+        top: 36%;
+        left: 50%;
+    }
+    .txt-right{
+        top: 63%;
+        left: 50%;;
+    }
+    .txt-bottom{
+        width: 350px;
+    }
+    .txt-bottom1{
+        font-size: 21px;
+    }
+}
 </style>
 
 <script>
@@ -285,22 +307,22 @@ window.parent.postMessage("resize", "*");
     <div class="txt-top1">THÂN TẶNG EM: <b style="color: red; font-size: 20px;">NGUYỄN THỊ PHƯỢNG</b></div>
 </div>
 <div class="txt-left hidden">
-    <p class="txt-left1">Gửi em người con gái anh thích</p>
-    <p class="txt-left2">Gửi em người con gái anh thích</p>
-    <p class="txt-left3">Gửi em người con gái anh thích</p>
-    <p class="txt-left4">Gửi em người con gái anh thích</p>
-    <p class="txt-left5">Gửi em người con gái anh thích</p>
-    <p class="txt-left6">Gửi em người con gái anh thích</p>
-    <p class="txt-left7">Gửi em người con gái anh thích</p>
+    <p class="txt-left1">Vậy là đã 33 ngày chúng ta nhắn tin với nhau.</p>
+    <p class="txt-left2">Tuy không dài nhưng với anh cũng không ngắn.</p>
+    <p class="txt-left3">33 ngày này cũng để anh hiểu một phần nào đó trong em.</p>
+    <p class="txt-left4">Hiểu về con người em, tính cách của em.</p>
+    <p class="txt-left5">Dường như anh đã tìm thấy mảnh ghép còn lại.</p>
+    <p class="txt-left6">Anh biết giờ nói trước vẫn còn quá sớm.</p>
+    <p class="txt-left7">Nhưng hãy tin anh, anh sẽ chờ em về nước.</p>
 </div>
 <div class="txt-right">
-    <p class="txt-right1">Gửi em người con gái anh thích</p>
-    <p class="txt-right2">Gửi em người con gái anh thích</p>
-    <p class="txt-right3">Gửi em người con gái anh thích</p>
-    <p class="txt-right4">Gửi em người con gái anh thích</p>
-    <p class="txt-right5">Gửi em người con gái anh thích</p>
-    <p class="txt-right6">Gửi em người con gái anh thích</p>
-    <p class="txt-right7">Gửi em người con gái anh thích</p>
+    <p class="txt-right1">Hôm nay là ngày Quốc Tế Phụ Nữ.</p>
+    <p class="txt-right2">Anh muốn mình là người chúc em sớm nhất.</p>
+    <p class="txt-right3">Chúc em luôn luôn lạc quan và yêu đời.</p>
+    <p class="txt-right4">Chúc cho gia đình mình luôn khỏe mạnh.</p>
+    <p class="txt-right5">Hãy cố gắng em nhé!</p>
+    <p class="txt-right6">Nếu mệt mỏi hãy tâm sự với anh.</p>
+    <p class="txt-right7">Hãy nhớ ở quê nhà còn có một người chờ em về.</p>
 </div>
 <div class="txt-bottom">
     <p class="txt-bottom1">CHÚC EM CÓ MỘT NGÀY MÙNG 8/3 THẬT ẤM ÁP, BÌNH YÊN VÀ HẠNH PHÚC</p>
@@ -1072,7 +1094,7 @@ const audioLoader = new THREE.AudioLoader();
 
 audioLoader.load(
 
-"https://res.cloudinary.com/dmnxeusyw/video/upload/v1668310333/sharecs.net/music_ji3iak.mp3",
+"",
 
 buffer => {
 
